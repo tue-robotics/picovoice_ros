@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.0.2)
 project(picovoice_driver)
 
+add_compile_options(-Wall -Werror=all)
+add_compile_options(-Wextra -Werror=extra)
+
 find_package(catkin REQUIRED COMPONENTS
   actionlib
   ddynamic_reconfigure
@@ -43,6 +46,7 @@ set(PICOVOICE_LIBRARIES
 )
 
 include_directories(
+  SYSTEM
   ${catkin_INCLUDE_DIRS}
   ${LIBSNDFILE_INCLUDE_DIRS}
   ${PICOVOICE_INCLUDE_DIRS}
