@@ -41,8 +41,8 @@ public:
   //!
   RecognizerNode(const std::string& name, const std::string& action_name,
                  const typename RecognizerDataType::Parameters& parameters)
-    : action_server_(action_name, boost::bind(&RecognizerNode::executeCallback, this, _1), false)
-    , parameters_(parameters)
+    : parameters_(parameters)
+    , action_server_(action_name, boost::bind(&RecognizerNode::executeCallback, this, _1), false)
   {
     ros::NodeHandle local_nh("~");
     auto record_directory = local_nh.param("record_directory", defaultRecordDirectory(name));
