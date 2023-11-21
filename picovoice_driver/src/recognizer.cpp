@@ -78,7 +78,8 @@ void Recognizer::recognizeThread()
   }
 
   pv_recorder_t* recorder = NULL;
-  pv_recorder_status_t recorder_status = pv_recorder_init(-1, record_settings.frame_length_, 100, true, &recorder);
+  pv_recorder_status_t recorder_status =
+      pv_recorder_init(record_settings.frame_length_, -1, 10, &recorder);
   if (recorder_status != PV_RECORDER_STATUS_SUCCESS)
   {
     throw std::runtime_error("Failed to initialize device with " +
