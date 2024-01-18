@@ -28,7 +28,7 @@ jobs:
       CCACHE_DIR: /home/runner/.ccache # Directory for ccache (and how we enable ccache in industrial_ci)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           submodules: ${{ matrix.env.SUBMODULES }}
       # This step will fetch/store the directory used by ccache before/after the ci run
